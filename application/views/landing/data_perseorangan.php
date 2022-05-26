@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Agung Widiya Lestari Syirkah Muamalah</title>
+    <title><?= $title; ?> | Agung Widiya Lestari Syirkah Muamalah</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap Icons-->
@@ -46,7 +46,8 @@
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                 <div class="col-lg-6">
-
+                <!-- Keluarin error ketika register -->     
+                <?php echo validation_errors(); ?>
                    <form action="<?php echo base_url(). 'dashboard/register'; ?>" method="post" enctype="multipart/form-data">
                       <div class="form-group">
                         <label style="color:green" for="exampleInputEmail1">Nama</label>
@@ -68,8 +69,6 @@
                         <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="password" name="password">
                     </div>
                     <br>
-
-
                     <input type="submit" value="Register" class="btn btn-primary"> *Silahkan <a href="<?php echo base_url(). 'dashboard/login'; ?>">login</a> jika telah memiliki akun
                 </form>
             </div>
