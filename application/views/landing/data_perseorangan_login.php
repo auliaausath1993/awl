@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Agung Widiya Lestari Syirkah Muamalah</title>
+    <title><?=$title?> | Agung Widiya Lestari Syirkah Muamalah</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Bootstrap Icons-->
@@ -30,7 +30,7 @@
                 <div class="col-lg-8 text-center">
                     <h2 class="text-white mt-0">We've got what you need!</h2>
                     <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-4">Silahkan registrasi terlebih dahulu untuk mengisi formulir Pendataan Perseorangan Agung Widiya Lestari Syirkah Muamalah</p>
+                    <p class="text-white-75 mb-4">Silahkan login terlebih dahulu untuk mengisi formulir Pendataan Perseorangan Agung Widiya Lestari Syirkah Muamalah</p>
                     <!-- <a class="btn btn-light btn-xl" href="#services">Get Started!</a> -->
                 </div>
             </div>
@@ -46,8 +46,9 @@
             </div>
             <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                 <div class="col-lg-6">
-
-                   <form action="" method="post" enctype="multipart/form-data">
+                <?=$this->session->flashdata('login_failed'); ?>
+                <?=$this->session->flashdata('user_loggedout'); ?>
+                   <form action="<?= base_url(). 'dashboard/login'; ?>" method="post" enctype="multipart/form-data">
                       
                     <div class="form-group">
                         <label style="color:green" for="exampleInputEmail1">Username</label>

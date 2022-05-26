@@ -8,7 +8,11 @@
                 <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>dashboard/form_one">Register</a></li>
+                <?php if(empty($this->session->userdata('is_login'))) { ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>dashboard/register">Register</a></li>
+		        <?php } else { ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url();?>dashboard/logout">Logout</a></li>
+                <?php }?>
             </ul>
         </div>
     </div>
